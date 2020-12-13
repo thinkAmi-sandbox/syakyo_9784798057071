@@ -148,4 +148,16 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
       res
     }
   }
+
+  def showIndex() = Action {
+    Ok(views.html.index())
+  }
+
+  def showIndexWithTemplateParam() = Action {
+    Ok(views.html.param("山田太郎"))
+  }
+
+  def showIndexWithMultiTemplateParam() = Action {
+    Ok(views.html.multi_param(123, "hanako", "flower"))
+  }
 }
